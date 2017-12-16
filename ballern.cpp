@@ -3,6 +3,10 @@
 #include <fstream>
 #include <cstring>
 #include <string>
+
+#include "Parser.h"
+
+using namespace ballern;
   
 static std::string readInputFile(char const* filename) {
   std::ifstream ifs(filename, std::ifstream::in);
@@ -38,6 +42,8 @@ int main(int argc, char* argv[]) {
 
     std::string code = readInputFile(infile);
     std::cout << "gotta parse this code soon: " << code << std::endl;
+    Parser p(std::move(code));
+    p.parse();
   } catch (std::string const& ex) {
     std::cerr << ex << std::endl;
     return 1;
