@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Parser.h"
+#include "Token.h"
 
 using namespace ballern;
   
@@ -41,9 +42,9 @@ int main(int argc, char* argv[]) {
     }
 
     std::string code = readInputFile(infile);
-    std::cout << "gotta parse this code soon: " << code << std::endl;
     Parser p(std::move(code));
-    p.parse();
+    ParseResult res = p.parse();
+    res.startToken->execute();
   } catch (std::string const& ex) {
     std::cerr << ex << std::endl;
     return 1;

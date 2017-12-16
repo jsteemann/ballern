@@ -1,2 +1,7 @@
 a.out
 core
+
+tokens.cpp
+grammar.hpp
+grammar.cpp
+grammar.output
