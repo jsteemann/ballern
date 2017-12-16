@@ -1,2 +1,2 @@
 all:
-	$(CXX) -g -std=c++17 ballern.cpp
+	$(CXX) -g -Wall -Wextra -std=c++17 ballern.cpp
